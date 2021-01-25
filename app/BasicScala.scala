@@ -23,7 +23,9 @@ object BasicScala {
   /**
     * Test if a String is an email
     */
-  def isEmail(maybeEmail: String): Boolean = ???
+  def isEmail(maybeEmail: String): Boolean = 
+if("""(?=[^\s]+)(?=(\w+)@([\w\.]+))""".r.findFirstIn(maybeEmail) == None)false else true
+
 
 
   /**
@@ -37,7 +39,15 @@ object BasicScala {
     * input : (i = 99, n = 38997)
     * output : 1723793299
     */
-  def power(i:Int, n:Int):Int = ???
+  def power(i:Int, n:Int):Int = {
+       if(n==1) 
+         i
+       else if(n==0)
+         1 
+        else
+         i*power(i,n-1)
+
+       }
 
 
 }
